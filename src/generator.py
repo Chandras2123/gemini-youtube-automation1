@@ -78,7 +78,8 @@ def generate_curriculum():
     print("🤖 No content plan found. Generating a new curriculum from scratch...")
     try:
         genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
-        model = genai.GenerativeModel('gemini-1.0-pro')
+       model = genai.GenerativeModel('models/text-bison-001')
+
         prompt = f"""
         You are an expert AI educator. Generate a curriculum for a YouTube series called 'AI for Developers by {YOUR_NAME}'.
 
@@ -106,7 +107,8 @@ def generate_lesson_content(lesson_title):
     print(f"🤖 Generating content for lesson: '{lesson_title}'...")
     try:
         genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
-        model = genai.GenerativeModel('gemini-1.0-pro')
+      model = genai.GenerativeModel('models/text-bison-001')
+
         prompt = f"""
         You are creating a lesson for the 'AI for Developers by {YOUR_NAME}' series. The topic is '{lesson_title}'.
         The style is: Assume the viewer is a beginner developer or non-tech person who wants to learn AI from scratch.
